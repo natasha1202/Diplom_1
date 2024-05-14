@@ -130,3 +130,4 @@ class TestBurger:
 
         assert 'Price: 700' in burger.get_receipt()
 
+
