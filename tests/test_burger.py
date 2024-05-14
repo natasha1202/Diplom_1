@@ -121,13 +121,13 @@ class TestBurger:
 
         mock_bun.get_price.return_value = 100
         mock_first_ingredient.get_price.return_value = 200
-        mock_second_ingredient.get_price.return_value = 300
+        mock_second_ingredient.get_price.return_value = 200
 
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_first_ingredient)
         burger.add_ingredient(mock_second_ingredient)
         print(burger.get_receipt())
 
-        assert 'Price: 700' in burger.get_receipt()
+        assert 'Price: 600' in burger.get_receipt()
 
 
