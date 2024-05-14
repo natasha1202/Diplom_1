@@ -107,12 +107,11 @@ class TestBurger:
         burger.add_ingredient(mock_first_ingredient)
         burger.add_ingredient(mock_second_ingredient)
 
-        assert (('white bun' in burger.get_receipt()) and
-                ('hot sauce' in burger.get_receipt()) and
-                ('sausage' in burger.get_receipt()) and
-                ('sauce' in burger.get_receipt()) and
-                ('filling' in burger.get_receipt())
-                )
+        assert (('(==== white bun ====)' and
+                 '= sauce hot sauce =' and
+                 '= filling sausage =' and
+                 '(==== white bun ====)' and
+                 'Price: 700') in burger.get_receipt())
 
     def test_burger_get_receipt_burger_total_price_check(self):
         burger = Burger()
@@ -127,14 +126,7 @@ class TestBurger:
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_first_ingredient)
         burger.add_ingredient(mock_second_ingredient)
+        print(burger.get_receipt())
 
         assert 'Price: 700' in burger.get_receipt()
-
-
-
-
-
-
-
-
 
