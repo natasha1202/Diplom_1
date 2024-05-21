@@ -126,7 +126,6 @@ class TestBurger:
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_first_ingredient)
         burger.add_ingredient(mock_second_ingredient)
-        print(burger.get_receipt())
 
         assert 'Price: 600' in burger.get_receipt()
 
